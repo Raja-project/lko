@@ -1,0 +1,130 @@
+{%extends 'megaTemp/base.html'%}
+{%block content%}
+{%load static%}
+
+
+      <br>
+
+      <!-- MegaHotels section starts  -->
+
+
+      <div class="container tours">
+
+   <h1 class="heading" data-aos="zoom-out">Find Best deals</h1>
+
+            
+   <div class="container-lg my-3">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+      <li data-bs-target="#myCarousel" data-bs-slide-to="0"
+      class="active"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for carousel items -->
+      <div class="carousel-inner">
+      <div class="carousel-item active">
+      <img src="{%static 'megaStatic/images/hotelslider1.png' %}" class="d-block w-100"
+      alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block">
+      <h5>HOTEL TAJ</h5>
+      <P></p>
+      </div>
+      </div>
+      <div class="carousel-item">
+      <img src="{%static 'megaStatic/images/hotelslider2.png' %}" class="d-block w-100"
+      alt="Slide 2">
+      <div class="carousel-caption d-none d-md-block">
+      <h5>GRAND JBR</h5>
+      <p></p>
+      </div>
+      </div>
+      <div class="carousel-item">
+      <img src="{%static 'megaStatic/images/hotelslider3.png' %}" class="d-block w-100"
+      alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block">
+      <h5>HAYATT REGENCY</h5>
+      <p></p>
+      </div>
+      </div>
+      </div>
+      <!-- Carousel controls -->
+      <a class="carousel-control-prev" href="#myCarousel" data-bsslide="
+      prev">
+      <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" data-bsslide="
+      next">
+      <span class="carousel-control-next-icon"></span>
+      </a>
+      </div>
+      
+      </div> 
+      <hr>
+
+
+<div class="p-5">
+   <h1 align="center">MEGAHOTELS</h1>
+  
+   <p><a href="#" target="_blank" class="btn btn-success btn-lg" size="50">Get started today &raquo;</a></p>
+   </div>
+   <div class="row">
+      <div class="col-md-4">
+         <img src="https://cdn0.weddingwire.in/vendor/3092/3_2/960/jpg/hyatt-place-pune-hinjawadi_15_63092_v1.jpeg" class="d-block w-100"
+         alt="#">
+      <h2>Hayat Regency</h2>
+      <p></p>
+      <p><a href="#" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+      </div> 
+   <div class="col-md-4">
+      <img src="https://cdn0.weddingwire.in/vendor/3092/3_2/960/jpg/hyatt-place-pune-hinjawadi_15_63092_v1.jpeg" class="d-block w-100"
+      alt="#">
+   <h2>Hayat Regency</h2>
+   <p></p>
+   <p><a href="#" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+   </div>
+   <div class="col-md-4">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/94/0b/23/hotel-clarks-avadh.jpg?w=700&h=-1&s=1" class="d-block w-100"
+      alt="#">
+   <h2>Awadh Clerk Inn</h2>
+   <p></p>
+   <p><a href="#" target="_blank" class="btn btn-success">Click Here &raquo;</a></p>
+   </div></div><hr>
+   
+  </div>
+
+
+  <!-- tours section starts  -->
+
+<div class="container tours">
+
+   <h1 class="heading" data-aos="zoom-out">Best Hotels In Lucknow</h1>
+
+   <section class="grid">
+
+      {% if hotels %}
+      {%for  hotel in hotels %}
+      <div class="box" data-aos="fade-up">
+         <div class="price"><i class="fas fa-rupee-sign"></i><span>{{hotel.hprice}}</span></div>
+         <img src="{{hotel.img_url}}" class="image" alt="" width="900px" height="706px">
+         
+         <h3 class="name">Hotel: {{hotel.hname}}</h3>
+         <p class="address">Rooms: {{hotel.hrooms}}</p>
+       <p class="address">Facilities: {{hotel.hdesc}}</p>
+         <br>
+         <br>
+         <a href="/megaApp/hdetail/{{hotel.hid}}/" class="btn">Check Detail</a>
+      </div>
+      {%endfor%}
+      {%else%}
+      <h2>No Product found!!</h2>
+      {%endif%}
+ 
+
+   </section>
+   <a href="/megaApp/mhotel/" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> More Hotels </a>
+         
+
+</div>
+{%endblock%}

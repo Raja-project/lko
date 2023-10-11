@@ -1,0 +1,47 @@
+{%extends 'corpTemp/corp_board.html'%}
+{%block content%}
+
+
+     <div class="container mt-3">
+
+          <form method="post" enctype="multipart/form-data">
+           <label>Corporate Regsiteration Form</label>
+        
+           <div class="mb-3 mt-3">
+            <label for="cust">Hotel Name</label>
+            <input type="text" class="form-control" id="cust" placeholder="Enter Hotel Name" name="hna" size="50">
+          </div>
+          <div class="mb-3 mt-3">
+               <label for="cust">Description</label>
+               <input type="text" class="form-control" id="cust" placeholder="Description" name="hdesc" size="50">
+             </div>
+             <div class="mb-3 mt-3">
+               <label for="cust">Rooms</label>
+               <input type="text" class="form-control" id="cust" placeholder="Enter No. Of Rooms" name="hrooms" size="50">
+             </div>
+             <div class="mb-3 mt-3">
+              <label for="im">UploadImage</label>
+              <input type="file" class="form-control" id="im"  name="upload" size="50" accept=".jpg,.png,.jpeg">
+            </div>
+             <div class="mb-3 mt-3">
+               <label for="cust">facility</label>
+               <input type="text" class="form-control" id="cust" placeholder="facility" name="hfacl" size="50">
+             </div>
+             <div class="mb-3 mt-3">
+               <label for="cust">Rating</label>
+               <input type="text" class="form-control" id="cust" placeholder="Rating" name="hrate" size="50">
+             </div>
+             <div class="mb-3 mt-3">
+               <label for="cust">Price</label>
+               <input type="text" class="form-control" id="cust" placeholder="Price" name="hprice" size="50">
+             </div>
+             <div class="mb-3 mt-3">
+               <label for="cust">Discount</label>
+               <input type="text" class="form-control" id="cust" placeholder="Discount" name="hdisc" size="50">
+             </div>
+             
+             {%csrf_token%}
+             <br>
+             <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+             </div>
+{%endblock%}

@@ -1,0 +1,35 @@
+{%extends 'megaTemp/base.html'%}
+{%block content%}
+{%load static%}
+<!-- tours section starts  -->
+
+<div class="container tours">
+
+     <h1 class="heading" data-aos="zoom-out">Best Hotels In Lucknow</h1>
+  
+     <section class="grid">
+  
+        {% if hotels %}
+        {%for  hotel in hotels %}
+        <div class="box" data-aos="fade-up">
+           <div class="price"><i class="fas fa-rupee-sign"></i><span>{{hotel.hprice}}</span></div>
+           <img src="{{hotel.img_url}}" class="image" alt="" width="900px" height="706px">
+           
+           <h3 class="name">Hotel: {{hotel.hname}}</h3>
+           <p class="address">Rooms: {{hotel.hrooms}}</p>
+         <p class="address">Facilities: {{hotel.hdesc}}</p>
+           <br>
+           <br>
+           <a href="/megaApp/hdetail/{{hotel.hid}}/" class="btn">Check Detail</a>
+        </div>
+        {%endfor%}
+        {%else%}
+        <h2>No Product found!!</h2>
+        {%endif%}
+   
+  
+     </section>
+           
+  
+  </div>
+  {%endblock%}

@@ -1,0 +1,83 @@
+{%extends 'megaTemp/base_board.html'%}
+{%block content%}
+<h2>All Corportes Data Pannel</h2>
+<section>
+    <div class="container-fluid">
+       <div class="row ">
+          <div class="col-lg-10 col-md-8 ml-auto">
+             <div class="row align-items-center pt-md-5 mt-md-5 mb-5">
+                <div class="col-12">
+                   <div class="card">
+                      <div class="card-body">
+                        <table class="table" width="100%" cellpadding="5px" cellspacing="5px" style="border: 2px solid hotpink">
+                           <thead>
+                             <tr>
+                               <th>HID</th>
+                               <th>CID</th>
+                               <th>Name</th>
+                               <th>Desc</th>
+                               <th>Rooms</th>
+                               <th>Facl</th> 
+                               <th>Img</th>                                
+                               <th>Rate</th>
+                               <th>Disc</th>
+                               <th>Price</th>
+                               
+                              
+
+                             </tr>
+ 
+                           </thead>
+                           <tbody>
+                             {% if hotels %}
+                         {%for  hotel in hotels %}
+                             <tr>
+                               <td>{{hotel.hid}}</td>
+                               <td>{{hotel.cid}}</td>
+                               <td>{{hotel.hname}}</td>
+                               <td>{{hotel.hdesc}}</td>
+                               <td>{{hotel.hrooms}}</td>
+                               <td>{{hotel.hfacl}}</td>
+                               <td><img src="{{hotel.img_url}}" alt="" width="50px" height="50px"></td>
+                               <td>{{hotel.hrate}}</td>
+                               <td>{{hotel.hdisc}}</td>
+                                 <td>{{hotel.hprice}}</td>
+<!--
+                                <td><a href="/bankAdmin/acc_record/{{acc.account_no}}"><button type="button" class="btn btn-primary">Change</button></a></td>
+                               <td><a href="#"><button type="button" class="btn btn-success">{{acc.acct_st}}</button></a></td>
+                            -->
+                            </tr>
+                       {%endfor%}
+                       {%else%}
+                       <h2>No Product found!!</h2>
+                       {%endif%}
+ 
+                           </tbody>
+                         </table>
+ 
+ 
+                       </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    </section>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+ $('#sidebarCollapse').on('click', function () {
+     $('#sidebar').toggleClass('active');
+ });
+});
+</script>
+
+
+
+{%endblock%}
